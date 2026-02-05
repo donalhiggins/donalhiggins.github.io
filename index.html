@@ -15,7 +15,7 @@
           <td align="center">
             <h1><font face="Comic Sans MS" color="#000080">Welcome to Donal Higgins's Personal Page</font></h1>
             <a href="https://www.linkedin.com/in/donal-higgins/" target="_blank"><input type="button" value="LinkedIn"></a><br>
-            <font face="Verdana" size="3" color="#000080">You are visitor #<b><span id="visitor-count">......</span></b></font>
+            <font face="Verdana" size="3" color="#000080">You are visitor #<b><span id="visitor-count"></span></b></font>
           </td>
         </tr>
       </table>
@@ -76,7 +76,7 @@
                   <a name="about"></a>
                   <h2><font face="Comic Sans MS" color="#800000">About Me</font></h2>
                   <font face="Verdana" size="4">
-                    I'm a graduating senior at the University of Michigan studying CSE. I'm mainly interested in low-level systems, computer architecture, and I love C++.
+                    I'm a graduating senior at the University of Michigan studying CSE. I'm mainly interested in low-level systems and computer architecture, but I like CS theory as well.
                   </font>
                 </td>
               </tr>
@@ -285,6 +285,25 @@
                 </td>
               </tr>
               <tr>
+                <td>
+                  <a name="links"></a>
+                  <h2><font face="Comic Sans MS" color="#800000">Cool Links</font></h2>
+                  <ul>
+                    <li><font face="Verdana" size="3"><a href="https://cluesbysam.com/" target="_blank">Clues By Sam</a></font></li>
+                    <li><font face="Verdana" size="3"><a href="https://en.cppreference.com/index.html" target="_blank">cppreference</a></font></li>
+                    <li><font face="Verdana" size="3"><a href="https://complexityzoo.net/Complexity_Zoo:N#nc" target="_blank">Complexity Zoo, specifically the class NC</a></font></li>
+                    <li><font face="Verdana" size="3"><a href="https://regex101.com/" target="_blank">regex101</a></font></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#CCCCCC">
+                    <tr><td><font size="1">&nbsp;</font></td></tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
                 <td align="center">
                   <font face="Verdana" size="3"><i>Thanks for stopping by</i></font>
                 </td>
@@ -298,31 +317,22 @@
 
 </table>
 
-<script data-goatcounter="https://hidonal.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script type="text/javascript">
 (function () {
-  var countNode = document.getElementById("visitor-count");
-  if (!countNode) {
-    return;
-  }
-
-  fetch("https://hidonal.goatcounter.com/counter/TOTAL.json")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      var parsed = parseInt(data.count, 10);
-      if (isNaN(parsed)) {
-        countNode.innerHTML = "N/A";
-        return;
-      }
-      countNode.innerHTML = ("000000" + parsed).slice(-6);
-    })
-    .catch(function () {
-      countNode.innerHTML = "N/A";
-    });
+  var t = setInterval(function () {
+    if (window.goatcounter && window.goatcounter.visit_count) {
+      clearInterval(t);
+      window.goatcounter.visit_count({
+        append: "#visitor-count",
+        path: "TOTAL",
+        no_branding: true,
+        style: "div{border:0;background:none;padding:0;margin:0;display:inline;}#gcvc-for{display:none;}#gcvc-views{font-family:Verdana;font-size:12px;color:#000080;}"
+      });
+    }
+  }, 100);
 })();
 </script>
+<script data-goatcounter="https://hidonal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </body>
 </html>
