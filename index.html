@@ -15,7 +15,8 @@
           <td align="center">
             <h1><font face="Comic Sans MS" color="#000080">Welcome to Donal Higgins's Personal Page</font></h1>
             <a href="https://www.linkedin.com/in/donal-higgins/" target="_blank"><input type="button" value="LinkedIn"></a><br>
-            <font face="Verdana" size="3" color="#000080">You are visitor #<b><span id="visitor-count"></span></b></font>
+            <font face="Verdana" size="3" color="#000080">You are visitor</font>&nbsp;
+            <img src="https://hitwebcounter.com/counter/counter.php?page=21474560&style=0006&nbdigits=4&type=ip&initCount=0" alt="visitor-counter" border="0" align="absmiddle" style="vertical-align:-6px;" />
           </td>
         </tr>
       </table>
@@ -134,7 +135,7 @@
                       <td nowrap><font face="Verdana" size="3"><a href="https://cse.engin.umich.edu/" target="_blank" style="text-decoration:none; color:#000000;"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=16" width="16" height="16" border="0" alt="University of Michigan favicon"> <b>University of Michigan</b></a></font></td>
                       <td><font face="Verdana" size="3">Instructional Assistant</font></td>
                       <td><font face="Verdana" size="3">Operating Systems</font></td>
-                      <td><font face="Verdana" size="3">August 2025 - December 2025</font></td>
+                      <td><font face="Verdana" size="3">August 2025 - May 2026</font></td>
                       <td><font face="Verdana" size="3">Ann Arbor, MI</font></td>
                     </tr>
                     <tr>
@@ -317,17 +318,27 @@
 
 </table>
 
+<div id="gcvc-holder" style="display:none;"></div>
+
 <script type="text/javascript">
 (function () {
   var t = setInterval(function () {
     if (window.goatcounter && window.goatcounter.visit_count) {
       clearInterval(t);
       window.goatcounter.visit_count({
-        append: "#visitor-count",
+        append: "#gcvc-holder",
         path: "TOTAL",
         no_branding: true,
-        style: "div{border:0;background:none;padding:0;margin:0;display:inline;}#gcvc-for{display:none;}#gcvc-by{display:none;}#gcvc-views{font-family:Verdana;font-size:12px;color:#000080;}"
+        style: "#gcvc{border:0;background:none;padding:0;margin:0;display:inline;}#gcvc-for{display:none;}#gcvc-by{display:none;}#gcvc-views{display:inline;font-family:'Courier New';font-size:12px;line-height:1;color:#00FF66;}"
       });
+      var t2 = setInterval(function () {
+        var views = document.getElementById("gcvc-views");
+        var target = document.getElementById("visitor-count-led");
+        if (views && target) {
+          target.innerHTML = views.innerHTML;
+          clearInterval(t2);
+        }
+      }, 100);
     }
   }, 100);
 })();
